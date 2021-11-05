@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayeMovement : MonoBehaviour
 {
     public float speed; // it's your characters speed
-    public float jumpAmount;
+    public float jumpAmount; // it's your character jump coefficient
     private Rigidbody2D rb; // this is our Rigidbody component
     bool IsGrounded = false; // we're checking to touching ground for jump.
 
