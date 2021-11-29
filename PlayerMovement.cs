@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayeMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public float speed; // it's your characters speed
     public float jumpAmount; // it's your character jump coefficient
