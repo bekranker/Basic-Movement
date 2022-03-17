@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed; // it's your characters speed
-    public float jumpAmount; // it's your character jump coefficient
-    private Rigidbody2D rb; // this is our Rigidbody component
+    public float speed; 
+    public float jumpAmount; 
+    private Rigidbody2D rb; 
     public LayerMask GroundLayer;
     public Transform feetPos;
     public float checkRadius;
@@ -14,26 +14,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        rb = this.GetComponent<Rigidbody2D>(); // we're connected the our Component
+        rb = this.GetComponent<Rigidbody2D>(); 
     }
 
     private void Update()
     {
-        var X = Input.GetAxis("Horizontal") * Time.deltaTime; // it's getting Inputs from player.we're getting values and we're say them var X.
-        var Y = Input.GetAxis("Vertical") * Time.deltaTime; //you should add y axis for your project.
+        var X = Input.GetAxis("Horizontal") * Time.deltaTime; 
+        var Y = Input.GetAxis("Vertical") * Time.deltaTime;
 
-        transform.position += new Vector3(X * speed, Y * speed, 0); //this is chancing position for your character every second.
+        transform.position += new Vector3(X * speed, Y * speed, 0);
 
 
     }
 
     private void FixedUpdate()
     {
-        IsGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, GroundLayer); // thats for jumping.
+        IsGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, GroundLayer); 
 
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
         {
-            rb.AddForce(transform.up * jumpAmount, ForceMode2D.Impulse); // we're adding some force for our character. but just for for up. 
+            rb.AddForce(transform.up * jumpAmount, ForceMode2D.Impulse);
         }
     }
 
